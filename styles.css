@@ -1,0 +1,140 @@
+:root {
+    --bg-1: #f5f8fc;
+    --card: #ffffff;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --glass: rgba(37, 99, 235, 0.08);
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, var(--bg-1), #ffffff);
+    color: #0f172a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 40px 16px;
+}
+
+/* Header / input area */
+#header {
+    width: 100%;
+    max-width: 760px;
+    background: var(--card);
+    padding: 40px 28px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 12px 0;
+    font-size: 1.6rem
+}
+
+#input-el {
+    width: 150px;
+    max-width: 60%;
+    padding: 10px 12px;
+    border: 1px solid #e6edf5;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow .15s, transform .12s;
+}
+
+#input-el:focus {
+    box-shadow: 0 6px 18px var(--glass);
+    transform: translateY(-1px)
+}
+
+#convert-btn {
+    margin-left: 10px;
+    padding: 10px 16px;
+    background: linear-gradient(90deg, var(--accent), #1e40af);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform .12s, box-shadow .12s, opacity .12s;
+}
+
+#convert:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.18)
+}
+
+/* Conversion result cards */
+.result {
+    width: 100%;
+    max-width: 760px;
+    background: var(--card);
+    padding: 30px 22px;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #0f172a
+}
+
+p {
+    margin: 4px 0 0 0;
+    color: var(--muted);
+    font-size: 0.98rem
+}
+
+/* Make result text wrap nicely on narrow screens */
+.result p {
+    max-width: 62%
+}
+
+@media (max-width:620px) {
+    body {
+        padding: 28px 12px
+    }
+
+    #input-el {
+        width: 120px;
+        max-width: 48%
+    }
+
+    .result {
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+    .result p {
+        max-width: 100%;
+        margin-top: 8px
+    }
+
+    #convert-btn {
+        margin-left: 8px;
+        margin-top: 8px
+    }
+}
+
+/* Small accessibility / utility tweaks */
+button:focus,
+input:focus {
+    outline: 3px solid rgba(37, 99, 235, 0.12)
+}
