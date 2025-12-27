@@ -8,6 +8,8 @@ const length = document.getElementById("length");
 const volume = document.getElementById("volume");
 const mass = document.getElementById("mass");
 
+// Add "s" in plural number of units.
+
 convertBtn.addEventListener("click", function () {
     let input = inputEl.value;
     length.innerHTML = `${input} meter = ${(input * 3.281).toFixed(3)} feet | ${input} feet = ${(input / 3.281).toFixed(3)} meter`;
